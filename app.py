@@ -47,6 +47,10 @@ fuel = st.selectbox('select the fuel type',fuel)
 year = st.selectbox('select the year',sorted(data.year.unique()))
 kms = st.number_input('Enter kilpmeters driven')
 
+ich_bin_ashutosh = 'https://github.com/ashitoshn3598'
+
+st.markdown(ich_bin_ashutosh, unsafe_allow_html=True)
+
 if st.button('Predict Price'):
     st.header('Predicted Price is :')
     price = int(pipe.predict(pd.DataFrame([[name,company,year,kms,fuel]],columns=['name','company','year','kms_driven','fuel_type']))[0])
